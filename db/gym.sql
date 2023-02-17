@@ -12,9 +12,10 @@ membership VARCHAR(255)
 
 CREATE TABLE gym_classes (
 id SERIAL PRIMARY KEY,
+title VARCHAR(255),
 class_description VARCHAR(255),
 instructor VARCHAR(255),
-date_time VARCHAR(255)
+class_date VARCHAR(255)
 );
 
 CREATE TABLE visits (
