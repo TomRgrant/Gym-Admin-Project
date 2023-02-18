@@ -20,6 +20,6 @@ class_date VARCHAR(255)
 
 CREATE TABLE visits (
 id SERIAL PRIMARY KEY,
-meber_id INT REFERENCES members(id) ON DELETE CASCADE
-gym_classes INT REFERENCES gym_classes(id) ON DELETE CASCADE
+member_id INT REFERENCES members(id) ON DELETE CASCADE
+gym_class_id INT REFERENCES gym_classes(id) ON DELETE CASCADE
 );
