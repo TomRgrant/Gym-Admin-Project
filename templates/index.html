@@ -2,4 +2,8 @@
 
 {% block content %}
     <h1>It Works!</h1>
+    {% for member in members %}
+    {{ member.first_name }}
+        
+    {% endfor %}
 {% endblock content %}
