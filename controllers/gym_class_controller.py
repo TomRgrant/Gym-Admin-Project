@@ -14,3 +14,7 @@ def classes():
 def show_class_by_id(id):
     gym_class = gym_class_repository.select(id)
     return render_template("gym_classes/show_id.html", gym_class = gym_class)
+
+@gym_classes_blueprint.route("/add_new_class")
+def add_new_class():
+    return render_template("gym_classes/add_new_class.html")

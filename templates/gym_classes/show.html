@@ -5,12 +5,22 @@
     <div>
         {% for class in gym_classes %}
 
-            <h1><a href="/class/{{ class.id }}">{{ class.title }}</a></h1>
-            <h2>{{ class.instructor }}</h2>
-            <p>{{ class.description }}</p>
-            <h3>{{ class.class_date }}</h3>
+            <div>
+                <h1><a href="/class/{{ class.id }}">{{ class.title }}</a></h1>
+                <h2>{{ class.instructor }}</h2>
+                <p>{{ class.description }}</p>
+                <h3>{{ class.class_date }}</h3>
+            </div>
 
         {% endfor %}
+
+        <div>
+            <form action="/add_new_class" method="get">
+            <label for="add_new"></label>
+            <input type="submit" name="add_new" id="add_new" value="Create New Class">
+            </form>
+        </div>
+
     </div>
 
 {% endblock content %}
