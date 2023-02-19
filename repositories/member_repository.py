@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 
 from models.member import Member
-from models.gym_class import Gym_class
+from models.gym_class import GymClass
 from models.visit import Visit
 
 def save(member):

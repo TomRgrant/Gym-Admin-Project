@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+        {% for class in gym_classes %}
+
+            <h1>{{ class.title }}</h1>
+            <h2>{{ class.instructor }}</h2>
+            <p>{{ class.description }}</p>
+            <h3>{{ class.class_date }}</h3>
+
+        {% endfor %}
+    </div>
+
+{% endblock content %}

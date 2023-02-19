@@ -1,10 +1,10 @@
 import unittest
-from models.gym_class import Gym_class
+from models.gym_class import GymClass
 import datetime
 
 class TestGymClass(unittest.TestCase):
     def setUp(self):
-        self.gym_class = Gym_class("Spin Class", "Learn how to spin", "Alex Jonna", datetime.date(2023, 4, 14))
+        self.gym_class = GymClass("Spin Class", "Learn how to spin", "Alex Jonna", datetime.date(2023, 4, 14))
 
     def test_gym_class_has_title(self):
         expected = "Spin Class"
