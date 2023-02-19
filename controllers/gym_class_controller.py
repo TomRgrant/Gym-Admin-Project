@@ -18,3 +18,7 @@ def show_class_by_id(id):
 @gym_classes_blueprint.route("/add_new_class")
 def add_new_class():
     return render_template("gym_classes/add_new_class.html")
+
+@gym_classes_blueprint.route("/edit_class")
+def edit_class():
+    return render_template("gym_classes/edit.html")

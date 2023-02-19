@@ -12,6 +12,13 @@
                 <h3>{{ class.class_date }}</h3>
             </div>
 
+            <div>
+                <form action="/edit_class" method="get">
+                <label for="edit_class"></label>
+                <input type="submit" name="edit_class" id="edit_class" value="Edit Class">
+                </form>
+            </div>
+
         {% endfor %}
 
         <div>
