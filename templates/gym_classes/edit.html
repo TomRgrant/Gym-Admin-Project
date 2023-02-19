@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Edit class</h1>
+
+    <section>
+
+        <form action="/classes" method="POST">
+
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" value="{{ gym_class.title }}">
+            </div>
+
+            <div>
+                <label for="description">Description:</label>
+                <input type="text" name="description" id="description" placeholder="Enter Class Description">
+            </div>
+
+            <div>
+                <label for="instructor">Instructor:</label>
+                <input type="text" name="instructor" id="instructor" placeholder="Enter Class Instructor">
+            </div>
+
+            <div>
+                <label for="class_date">Class Date:</label>
+                <input type="date" name="class_date" id="class_date" min="2023-2-17" value="2023-2-19">
+            </div>
+
+            <div>
+                <label for="submit"></label>
+                <input type="submit" name="submit" id="submit">
+            </div>
+
+        </form>
+
+    </section>
+
 {% endblock content %}

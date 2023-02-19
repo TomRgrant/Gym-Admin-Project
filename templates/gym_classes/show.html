@@ -13,7 +13,7 @@
             </div>
 
             <div>
-                <form action="/edit_class" method="get">
+                <form action="/edit_class/{{ class.id }}" method="get">
                 <label for="edit_class"></label>
                 <input type="submit" name="edit_class" id="edit_class" value="Edit Class">
                 </form>
@@ -22,7 +22,7 @@
         {% endfor %}
 
         <div>
-            <form action="/add_new_class" method="get">
+            <form action="/add_new_class/{{ class.id }}" method="get">
             <label for="add_new"></label>
             <input type="submit" name="add_new" id="add_new" value="Create New Class">
             </form>
