@@ -21,6 +21,15 @@ def select_all():
         gym_classes.append(gym_class)
     return gym_classes
 
+def select(id):
+    sql = """SELECT * FROM gym_classes
+             WHERE id = %s"""
+    values = [id]
+    results = run_sql(sql, values)
+    for row in results:
+        gym_class = GymClass(row['title'], row['class_description'], row['instructor'], row['class_date'])
+    return gym_class
+
 
 
 
