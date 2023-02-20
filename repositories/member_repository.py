@@ -21,6 +21,14 @@ def select_all():
         members.append(member)
     return members
 
+def select(id):
+    sql = "SELECT * FROM members WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    for row in results:
+        member = Member(row['first_name'], row['last_name'], row['membership'])
+    return member
+
 def delete_all():
     sql = "DELETE FROM members"
     run_sql(sql)

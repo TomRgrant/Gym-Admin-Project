@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <section>
+        <div>
+            {% for member in members %}
+                <h1> <a href="/members/{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</a></h1>
+                <h3>{{ member.membership }}</h3>
+                
+            {% endfor %}
 
-    {% for member in members %}
-        <h1>{{ member.first_name }} {{ member.last_name }}</h1>
-        <h3>{{ member.membership }}</h3>
-    {% endfor %}
+            <form action="/create_new_member">
+                <input type="submit" name="new_member" id="new_member" value="Create New Member">
+            </form>
+        </div>
+    </section>
 
 {% endblock content %}
