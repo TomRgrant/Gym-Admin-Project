@@ -2,4 +2,9 @@
 
 {% block content %}
     <h1>{{ member.first_name }} </h1>
+
+    {% for class in classes %}
+        {{ class.title }}
+    {% endfor %}
+
 {% endblock content %}

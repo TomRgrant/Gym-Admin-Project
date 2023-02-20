@@ -29,3 +29,6 @@ visit_repository.save(visit1)
 
 visit2 = Visit(member2, gym_class2)
 visit_repository.save(visit2)
+
+visit3 = Visit(member1, gym_class1)
+visit_repository.save(visit3)
