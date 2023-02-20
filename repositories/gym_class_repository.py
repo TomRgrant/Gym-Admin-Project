@@ -27,12 +27,21 @@ def select(id):
     values = [id]
     results = run_sql(sql, values)
     for row in results:
-        gym_class = GymClass(row['title'], row['class_description'], row['instructor'], row['class_date'])
+        gym_class = GymClass(row['title'], row['class_description'], row['instructor'], row['class_date'], row['id'])
     return gym_class
 
-
+def update(gym_class):
+    sql = """UPDATE gym_classes SET (title, class_description, instructor, class_date)
+             = (%s, %s, %s, %s) WHERE id = %s"""
+    values = [gym_class.title, gym_class.description, gym_class.instructor, gym_class.class_date, gym_class.id]
+    results = run_sql(sql, values)
 
 
 def delete_all():
     sql = "DELETE FROM gym_classes"
     run_sql(sql)
+
+def delete(id):
+    sql = "DELETE from gym_classes WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

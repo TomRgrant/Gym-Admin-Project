@@ -34,5 +34,22 @@ def new_class():
 
 @gym_classes_blueprint.route("/edit_class/<id>")
 def edit_class(id):
-    gym_class = gym_class_repository
-    return render_template("gym_classes/edit.html")
+    gym_class = gym_class_repository.select(id)
+    return render_template("gym_classes/edit.html", gym_class = gym_class)
+
+@gym_classes_blueprint.route("/classes/update/<id>", methods=['POST'])
+def update_class(id):
+    title = request.form['title']
+    description = request.form['description']
+    instructor = request.form['instructor']
+    class_date = request.form['class_date']
+    split_date = class_date.split("-")
+    class_date = datetime.date(int(split_date[0]), int(split_date[1]), int(split_date[2]))
+    gym_class = GymClass(title, description, instructor, class_date, id)
+    gym_class_repository.update(gym_class)
+    return redirect("/classes")
+
+@gym_classes_blueprint.route("/delete_class/<id>", methods=['POST'])
+def delete_class(id):
+    gym_class_repository.delete(id)
+    return redirect("/classes")

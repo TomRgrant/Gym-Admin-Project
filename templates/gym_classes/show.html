@@ -13,16 +13,23 @@
             </div>
 
             <div>
-                <form action="/edit_class/{{ class.id }}" method="get">
+                <form action="/edit_class/{{ class.id}}" method="get">
                 <label for="edit_class"></label>
                 <input type="submit" name="edit_class" id="edit_class" value="Edit Class">
+                </form>
+            </div>
+
+            <div>
+                <form action="/delete_class/{{ class.id }}" method="POST">
+                <label for="delete"></label>
+                <input type="submit" name="delete" id="delete" value="Delete Class">
                 </form>
             </div>
 
         {% endfor %}
 
         <div>
-            <form action="/add_new_class/{{ class.id }}" method="get">
+            <form action="/add_new_class" method="get">
             <label for="add_new"></label>
             <input type="submit" name="add_new" id="add_new" value="Create New Class">
             </form>

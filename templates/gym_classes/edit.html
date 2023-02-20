@@ -1,38 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
     <section>
+            <form action="/classes/update/{{ gym_class.id }}" method="POST">
+                <div>
+                    <label for="title">Enter Class Title:</label>
+                    <input type="text" name="title" id="title" value="{{ gym_class.title }}" autofocus required>
 
-        <form action="/classes" method="POST">
+                    <label for="instructor">Enter Class Instructor:</label>
+                    <input type="text" name="instructor" id="instructor" value="{{ gym_class.instructor }}">
 
-            <div>
-                <label for="title">Title:</label>
-                <input type="text" name="title" id="title" value="{{ gym_class.title }}">
-            </div>
+                    <label for="description">Enter Class Description:</label>
+                    <input type="text" name="description" id="description" value="{{ gym_class.description }}">
 
-            <div>
-                <label for="description">Description:</label>
-                <input type="text" name="description" id="description" placeholder="Enter Class Description">
-            </div>
+                    <label for="class_date">Enter Class Date:</label>
+                    <input type="date" name="class_date" id="class_date" value="{{ gym_class.class_date }}" min="2023-2-17">
+                </div>
 
-            <div>
-                <label for="instructor">Instructor:</label>
-                <input type="text" name="instructor" id="instructor" placeholder="Enter Class Instructor">
-            </div>
-
-            <div>
-                <label for="class_date">Class Date:</label>
-                <input type="date" name="class_date" id="class_date" min="2023-2-17" value="2023-2-19">
-            </div>
-
-            <div>
-                <label for="submit"></label>
-                <input type="submit" name="submit" id="submit">
-            </div>
-
-        </form>
+                <div>
+                    <input type="submit" name="submit" id="submit" value="Confirm Changes">
+                </div>
+            </form>
 
     </section>
-
 {% endblock content %}
