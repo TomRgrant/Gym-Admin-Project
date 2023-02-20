@@ -11,6 +11,10 @@
                     <input type="submit" name="delete" id="delete" value="Delete Member">
                 </form>
 
+                <form action="/edit_member/{{ member.id }}" method = GET>
+                    <input type="submit" name="edit" id="edit" value="Edit Member">
+                </form>
+
             {% endfor %}
 
             <form action="/create_new_member">

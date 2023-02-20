@@ -5,3 +5,4 @@ class GymClass:
         self.instructor = instructor
         self.class_date = class_date
         self.id = id
+        members = []

@@ -26,8 +26,14 @@ def select(id):
     values = [id]
     results = run_sql(sql, values)
     for row in results:
-        member = Member(row['first_name'], row['last_name'], row['membership'])
+        member = Member(row['first_name'], row['last_name'], row['membership'], row['id'])
     return member
+
+def update(member):
+    sql = """UPDATE members SET (first_name, last_name, membership)
+             = (%s, %s, %s) WHERE id = %s"""
+    values = [member.first_name, member.last_name, member.membership]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM members"

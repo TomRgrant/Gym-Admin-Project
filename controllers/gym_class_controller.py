@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.gym_class import GymClass
 import repositories.gym_class_repository as gym_class_repository
+import repositories.visit_repository as visit_repository
 import datetime
 
 gym_classes_blueprint = Blueprint("gym_class", __name__)
@@ -26,7 +27,8 @@ def save_new_class():
 @gym_classes_blueprint.route("/class/<id>")
 def show_class_by_id(id):
     gym_class = gym_class_repository.select(id)
-    return render_template("gym_classes/show_id.html", gym_class = gym_class)
+    class_members = visit_repository.select_all_members(id)
+    return render_template("gym_classes/show_id.html", gym_class = gym_class, class_members = class_members)
 
 @gym_classes_blueprint.route("/add_new_class")
 def new_class():
