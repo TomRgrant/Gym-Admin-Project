@@ -6,7 +6,11 @@
             {% for member in members %}
                 <h1> <a href="/members/{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</a></h1>
                 <h3>{{ member.membership }}</h3>
-                
+
+                <form action="/delete_member/{{ member.id }}" method = POST>
+                    <input type="submit" name="delete" id="delete" value="Delete Member">
+                </form>
+
             {% endfor %}
 
             <form action="/create_new_member">

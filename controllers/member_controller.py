@@ -27,3 +27,8 @@ def show_id(id):
 @members_blueprint.route("/create_new_member")
 def create_member():
     return render_template("members/add_new_member.html")
+
+@members_blueprint.route("/delete_member/<id>", methods=['POST'])
+def delete_member(id):
+    member_repository.delete(id)
+    return redirect("/members")
