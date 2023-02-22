@@ -1,34 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section>
+    <section class="width_100 flex_justify_column_center ">
+        <div class="index_class_row flex class_border">
+            <form action="/members" method="POST">
 
-        <form action="/members" method="POST">
+                <div class="padding_05rem member_join_class">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" id="first_name" placeholder="Enter First Name" required autofocus>
+                </div>
 
-            <div>
-                <label for="first_name">First Name:</label>
-                <input type="text" name="first_name" id="first_name" placeholder="Enter First Name" required autofocus>
-            </div>
+                <div class="padding_05rem member_join_class">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" id="last_name" placeholder="Enter Last Name" required>
+                </div>
 
-            <div>
-                <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name" id="last_name" placeholder="Enter Last Name" required>
-            </div>
+                <div class="padding_05rem member_join_class">
+                    <label for="membership">Membership:</label>
+                    <select name="membership" id="membership">
+                        <option value="Gold">Gold</option>
+                        <option value="Platinum">Platinum</option>
+                    </select>
+                </div>
 
-            <div>
-                <label for="membership">Membership:</label>
-                <select name="membership" id="membership">
-                    <option value="True">True</option>
-                    <option value="False">Flase</option>
-                </select>
-            </div>
+                <div class="justify_content_center">
+                    <label for="submit"></label>
+                    <input class="edit_button" type="submit" name="submit" id="submit">
+                </div>
 
-            <div>
-                <label for="submit"></label>
-                <input type="submit" name="submit" id="submit">
-            </div>
+            </form>
 
-        </form>
+        </div>
+    </section>
 
     </section>
 {% endblock content %}

@@ -1,14 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    {{ gym_class.title }}
-    {{ gym_class.instructor }}
-    {{ gym_class.description }}
-    {{ gym_class.class_date }}
-
-    {% for member in class_members %}
-        {{ member.first_name }}
-    {% endfor %}
-
+    <section class="width_100 flex_justify_column_center ">
+        <div class="index_class class_border">
+            <div class="flex_justify_column_center">
+                <div class="class_id_title padding_1rem">
+                    {{ gym_class.title }}
+                </div>
+                <div class="class_id_instructor padding_1rem">
+                    {{ gym_class.instructor }}
+                </div>
+                <div class="class_id_description padding_1rem">
+                    {{ gym_class.description }}
+                </div>
+                <div class="class_id_date padding_1rem">
+                    {{ gym_class.class_date }}
+                </div>
+            </div>
+    
+            <div class="class_members padding_1rem">
+                <p class="justify_content_center wavy_underline member_in_class">Members in Class</p>
+                {% for member in class_members %}
+                    {{ member.first_name }},
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock content %}

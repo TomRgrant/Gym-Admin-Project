@@ -2,42 +2,41 @@
 
 {% block content %}
 
-    <section>
+    <section class="width_100 flex_justify_column_center ">
 
-        <form action="/edit_member/{{ member.id }}" method="POST">
+        <div class="index_class class_border justify_content_center">
+            <form action="/edit_member/{{ member.id }}" method="POST">
 
-            <div>
-                <label for="first_name">First Name:</label>
-                <input type="text" name="first_name" id="first_name" value="{{ member.first_name }}" required autofocus>
-            </div>
+                <div class="member_edit justify_content_center">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" id="first_name" value="{{ member.first_name }}" required autofocus>
+                </div>
 
-            <div>
-                <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name" id="last_name" value="{{ member.last_name }}" required>
-            </div>
+                <div class="member_edit justify_content_center">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" id="last_name" value="{{ member.last_name }}" required>
+                </div>
 
-            <div>
-                {% if membership %}
+                <div class="member_edit justify_content_center">
                     <label for="membership">Membership:</label>
-                    <select name="membership" id="membership">
-                        <option value="True" selected>True</option>
-                        <option value="False">False</option>
-                    </select>
-                {% else %}
-                    <label for="membership">Membership:</label>
-                    <select name="membership" id="membership">
-                        <option value="True">True</option>
-                        <option value="False" selected>False</option>
-                    </select>
-                {% endif %}
-            </div>
+                        <select name="membership" id="membership">
+                            {% if member.membership == "Gold" %}
+                                <option value=Gold selected>Gold</option>
+                                <option value=Platinum>Platinum</option>
+                            {% else %}
+                                <option value=Gold>Gold</option>
+                                <option value=Platinum selected>Platinum</option>
+                            {% endif %}
+                        </select>
+                </div>
 
-            <div>
-                <label for="submit"></label>
-                <input type="submit" name="submit" id="submit">
-            </div>
+                <div class="justify_content_center">
+                    <label for="submit"></label>
+                    <input class="edit_button" type="submit" name="submit" id="submit">
+                </div>
 
-        </form>
+            </form>
+        </div>
 
     </section>
 

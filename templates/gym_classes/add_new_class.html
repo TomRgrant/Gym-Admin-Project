@@ -2,36 +2,38 @@
 
 {% block content %}
 
-    <section>
+    <section class="width_100 flex_justify_column_center ">
 
-        <form action="/classes" method="POST">
-
-            <div>
-                <label for="title">Title:</label>
-                <input type="text" name="title" id="title" placeholder="Enter Class Title" required autofocus>
-            </div>
-
-            <div>
-                <label for="description">Description:</label>
-                <input type="text" name="description" id="description" placeholder="Enter Class Description" required>
-            </div>
-
-            <div>
-                <label for="instructor">Instructor:</label>
-                <input type="text" name="instructor" id="instructor" placeholder="Enter Class Instructor" required>
-            </div>
-
-            <div>
-                <label for="class_date">Class Date:</label>
-                <input type="date" name="class_date" id="class_date" min="2023-2-17" value="2023-2-19" required>
-            </div>
-
-            <div>
-                <label for="submit"></label>
-                <input type="submit" name="submit" id="submit">
-            </div>
-
-        </form>
+        <div class="index_class_row flex class_border">
+            <form action="/classes" method="POST">
+    
+                <div class="padding_05rem member_join_class">
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" placeholder="Enter Class Title" required autofocus>
+                </div>
+    
+                <div class="padding_05rem member_join_class">
+                    <label for="description">Description:</label>
+                    <input type="text" name="description" id="description" placeholder="Enter Class Description" required>
+                </div>
+    
+                <div class="padding_05rem member_join_class">
+                    <label for="instructor">Instructor:</label>
+                    <input type="text" name="instructor" id="instructor" placeholder="Enter Class Instructor" required>
+                </div>
+    
+                <div class="padding_05rem member_join_class">
+                    <label for="class_date">Class Date:</label>
+                    <input type="date" name="class_date" id="class_date" min="2023-2-17" value="2023-2-19" required>
+                </div>
+    
+                <div class="justify_content_center">
+                    <label for="submit"></label>
+                    <input class="edit_button" type="submit" name="submit" id="submit">
+                </div>
+    
+            </form>
+        </div>
 
     </section>
 

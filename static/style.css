@@ -1,0 +1,295 @@
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSanaTZJXJBt_1-QIHx6GpDBWDRZ8D_YSdTOA&usqp=CAU');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+/* --------------------------------------- */
+
+nav {
+    display: flex;
+    background-color: #2f6a87;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+
+
+.nav_logo {
+    width: 30%;
+    display: flex;
+    justify-content: right;
+}
+
+.nav_ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.nav_link {
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    font-size:x-large;
+}
+
+body > header > section > nav > div > ul > li > a:hover {
+    color: #ea6c36;
+}
+
+.nav_logo_img {
+    height: 50px;
+    border-radius: 20px;
+}
+
+/* -------------------------------------------------------- */
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    align-items: center;
+}
+
+.flex_justify_column_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.width_100 {
+    width: 100%;
+}
+
+.width_75 {
+    width: 75%;
+}
+
+.index_class {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #ea6c36;
+    align-items: center;
+    margin: 1rem;
+    border-radius: 50px;
+}
+
+.class_border {
+    border: black 3px solid;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.padding_1rem {
+    padding: 1rem;
+}
+
+.padding_05rem {
+    padding: 0.5rem;
+}
+
+.class_title {
+    color:white;
+    text-decoration: underline;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.class_title:hover {
+    color:#2f6a87;
+}
+
+.class_instructor {
+    color: white;
+    font-style: italic;
+}
+
+
+.class_description {
+    color: white;
+}
+
+.class_date {
+    color: white;
+}
+
+.edit_button {
+    background-color: #2f6a87;
+    color: white;
+    border-radius: 50px;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.delete_button {
+    background-color: #d11d47;
+    color: white;
+    border-radius: 50px;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.create_button {
+    background-color: #2f6a87;
+    color: white;
+    border-radius: 50px;
+    margin: 0.5rem;
+    font-size: x-large;
+    border: black 3px solid;
+    cursor: pointer;
+}
+
+.create_button:hover {
+    color: #ea6c36;
+}
+
+.member_name {
+    color: white;
+    text-decoration: underline;
+    font-size: 2.5rem;
+}
+
+.color {
+    color: #d11d47;
+    font-size: x-small;
+}
+
+.follow_bottom_screen {
+    position: fixed;
+    bottom: 10px;
+}
+
+.new_member_left {
+    margin: 0.5rem;
+    width: 100%;
+    position: left;
+}
+
+.new_member_right {
+    width: 100%;
+    position: right;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex_justify_row_center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.index_class_row {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    background-color: #ea6c36;
+    justify-content: center;
+    margin: 1rem;
+    border-radius: 50px;
+}
+
+.justify_content_center {
+    display: flex;
+    justify-content: center;
+}
+
+.membership {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.member_classes {
+    color: white;
+    font-size: larger;
+}
+
+.member_join_class {
+    color: white;
+    font-size: large;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.edit_class_lable {
+    color: white;
+    font-size: x-large;
+}
+
+.class_id_title {
+    font-size: 3rem;
+    color: white;
+    text-decoration: underline;
+}
+
+.class_id_instructor {
+    color: white;
+    font-size: 2rem;
+}
+
+.class_id_description {
+    color: white;
+    font-size: large;
+}
+
+.class_id_date {
+    color: white;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.class_members {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.member_edit {
+    color: white;
+    padding: 1rem;
+    font-size: larger;
+}
+
+.wavy_underline {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+.member_in_class {
+    font-size: 1.8rem;
+}
+
+.member_name:hover {
+    color: #2f6a87;
+}
+
+.member_name_id {
+    color: white;
+    text-decoration: underline;
+    font-size: 2.5rem;
+}
+
+select {
+    background: #2f6a87;
+    color: white;
+}
+
+input {
+    background:#2f6a87;
+    color: white;
+}

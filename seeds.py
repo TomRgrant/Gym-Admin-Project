@@ -11,10 +11,10 @@ import repositories.visit_repository as visit_repository
 member_repository.delete_all()
 gym_class_repository.delete_all()
 
-member1 = Member("Tom", "Grant", True)
+member1 = Member("Tom", "Grant", "Gold")
 member_repository.save(member1)
 
-member2 = Member("Jill", "Rudy", True)
+member2 = Member("Jill", "Rudy", "Platinum")
 member_repository.save(member2)
 
 gym_class1 = GymClass("Spin Class", "Learn to spin", "Peter Gillaghan", datetime.date(2023, 3, 12))
@@ -22,6 +22,9 @@ gym_class_repository.save(gym_class1)
 
 gym_class2 = GymClass("Hula Class", "Learn to spin a ring", "Gill Peterson", datetime.date(2023, 6, 15))
 gym_class_repository.save(gym_class2)
+
+gym_class3 = GymClass("Please join class", "pls join", "desprate dave", datetime.date(2023, 5, 21))
+gym_class_repository.save(gym_class3)
 
 
 visit1 = Visit(member1, gym_class2)

@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for class in gym_classes %}
+    <section class="width_100 flex_justify_column_center">
+        {% for class in gym_classes %}
 
-    <div>
-        <h1><a href="/class/{{ class.id }}">{{ class.title }}</a></h1>
-        <h2>{{ class.instructor }}</h2>
-        <p>{{ class.description }}</p>
-        <h3>{{ class.class_date }}</h3>
-    </div>
+        <div class="index_class text_center class_border">
+            <a class="class_title padding_1rem" href="/class/{{ class.id }}">{{ class.title }}</a>
+            <h2 class="class_instructor" >{{ class.instructor }}</h2>
+            <p class="class_description" >{{ class.description }}</p>
+            <h3 class="class_date" >{{ class.class_date }}</h3>
+        </div>
 
-    {% endfor %}
+        {% endfor %}
+    </section>
 {% endblock content %}

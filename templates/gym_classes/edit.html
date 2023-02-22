@@ -1,26 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section>
+    <section class="width_100 flex_justify_column_center">
+        <div class="index_class text_center class_border">
             <form action="/classes/update/{{ gym_class.id }}" method="POST">
-                <div>
-                    <label for="title">Enter Class Title:</label>
-                    <input type="text" name="title" id="title" value="{{ gym_class.title }}" autofocus required>
-
-                    <label for="instructor">Enter Class Instructor:</label>
-                    <input type="text" name="instructor" id="instructor" value="{{ gym_class.instructor }}">
-
-                    <label for="description">Enter Class Description:</label>
-                    <input type="text" name="description" id="description" value="{{ gym_class.description }}">
-
-                    <label for="class_date">Enter Class Date:</label>
-                    <input type="date" name="class_date" id="class_date" value="{{ gym_class.class_date }}" min="2023-2-17">
+                <div class="padding_1rem justify_content_center">
+                    <label class="edit_class_lable " for="title">Enter Class Title:</label>
+                    <input class="edit_class_input" type="text" name="title" id="title" value="{{ gym_class.title }}" autofocus required>
                 </div>
 
-                <div>
-                    <input type="submit" name="submit" id="submit" value="Confirm Changes">
+                <div class="padding_1rem">
+                    <label class="edit_class_lable " for="instructor">Enter Class Instructor:</label>
+                    <input class="edit_class_input" type="text" name="instructor" id="instructor" value="{{ gym_class.instructor }}">
+                </div>
+
+                <div class="padding_1rem">
+                    <label class="edit_class_lable " for="description">Enter Class Description:</label>
+                    <input class="edit_class_input" type="text" name="description" id="description" value="{{ gym_class.description }}">
+                </div>
+
+                <div class="padding_1rem">
+                    <label class="edit_class_lable " for="class_date">Enter Class Date:</label>
+                    <input class="edit_class_input" type="date" name="class_date" id="class_date" value="{{ gym_class.class_date }}" min="2023-2-17">
+                </div>
+
+                <div class="padding_1rem">
+                    <input class="edit_button" type="submit" name="submit" id="submit" value="Confirm Changes">
                 </div>
             </form>
+        </div>
 
     </section>
 {% endblock content %}

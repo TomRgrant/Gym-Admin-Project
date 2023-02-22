@@ -2,39 +2,41 @@
 
 {% block content %}
 
-    <div>
+    <section class="width_100 flex_justify_column_center">
         {% for class in gym_classes %}
 
-            <div>
-                <h1><a href="/class/{{ class.id }}">{{ class.title }}</a></h1>
-                <h2>{{ class.instructor }}</h2>
-                <p>{{ class.description }}</p>
-                <h3>{{ class.class_date }}</h3>
-            </div>
+            <div class="index_class class_border">
+                <div class="index_class text_center">
+                    <a class="class_title padding_1rem" href="/class/{{ class.id }}">{{ class.title }}</a>
+                    <h2 class="class_instructor">{{ class.instructor }}</h2>
+                    <p class="class_description">{{ class.description }}</p>
+                    <h3 class="class_date">{{ class.class_date }}</h3>
+                </div>
 
-            <div>
-                <form action="/edit_class/{{ class.id}}" method="get">
-                <label for="edit_class"></label>
-                <input type="submit" name="edit_class" id="edit_class" value="Edit Class">
-                </form>
-            </div>
+                <div>
+                    <form action="/edit_class/{{ class.id}}">
+                    <label for="edit_class"></label>
+                    <input class="edit_button" type="submit" name="edit_class" id="edit_class" value="Edit Class">
+                    </form>
+                </div>
 
-            <div>
-                <form action="/delete_class/{{ class.id }}" method="POST">
-                <label for="delete"></label>
-                <input type="submit" name="delete" id="delete" value="Delete Class">
-                </form>
+                <div>
+                    <form action="/delete_class/{{ class.id }}" method="POST">
+                    <label for="delete"></label>
+                    <input class="delete_button" type="submit" name="delete" id="delete" value="Delete Class">
+                    </form>
+                </div>
             </div>
 
         {% endfor %}
 
-        <div>
+        <div class="follow_bottom_screen">
             <form action="/add_new_class" method="get">
             <label for="add_new"></label>
-            <input type="submit" name="add_new" id="add_new" value="Create New Class">
+            <input class="create_button" type="submit" name="add_new" id="add_new" value="Create New Class">
             </form>
         </div>
 
-    </div>
+    </section>
 
 {% endblock content %}

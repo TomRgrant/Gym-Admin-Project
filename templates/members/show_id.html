@@ -1,10 +1,42 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{ member.first_name }} </h1>
 
-    {% for class in classes %}
-        {{ class.title }}
-    {% endfor %}
+    <section class="width_100 flex_justify_column_center">
+
+        <div class="index_class text_center class_border">
+            <div class="member_name_id padding_1rem">
+                {{ member.first_name }}
+                {{ member.last_name }}
+            </div>
+
+            <div class="membership padding_1rem">
+                {{ member.membership }}
+            </div>
+
+            <div class="member_classes padding_1rem">
+                {% for class in enrolled_classes %}
+                    ( {{ class.title }} ), 
+                {% endfor %}
+            </div>
+        
+            <form action="/join_new_class/{{ member.id }}" method = "POST">
+            <div class="member_join_class padding_1rem">
+                    <label for="join_class">Join A New Class</label>
+                    <select class="cursor_pointer" name="join_class" id="join_class">
+                        {% for class in classes %}
+                            <option value="{{ class.id }}" >{{ class.title }}</option>
+                        {% endfor %}
+                    </select>
+            </div>
+            <div class="padding_1rem">
+                <input class="edit_button cursor_pointer" type="submit" name="submit" id="submit" value="Join Class">
+            </div>
+                </form>
+        </div>
+
+        </div>
+
+    </section>
 
 {% endblock content %}

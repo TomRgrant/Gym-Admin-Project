@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.member import Member
+from models.visit import Visit
 import repositories.member_repository as member_repository
 import repositories.visit_repository as visit_repository
+import repositories.gym_class_repository as gym_class_repository
 
 members_blueprint = Blueprint("members", __name__)
 
@@ -23,8 +25,9 @@ def create_new_member():
 @members_blueprint.route("/members/<id>")
 def show_id(id):
     member = member_repository.select(id)
-    classes = visit_repository.select_all_classes(id)
-    return render_template("members/show_id.html", member = member, classes = classes)
+    enrolled_classes = visit_repository.select_all_classes(id)
+    classes = gym_class_repository.select_all()
+    return render_template("members/show_id.html", member = member, enrolled_classes = enrolled_classes, classes = classes)
 
 @members_blueprint.route("/create_new_member")
 def create_member():
@@ -48,3 +51,13 @@ def update_member(id):
     member = Member(first_name, last_name, membership, id)
     member_repository.update(member)
     return redirect("/members")
+
+@members_blueprint.route("/join_new_class/<id>", methods=['POST'])
+def add_member_to_class(id):
+    member = member_repository.select(id)
+    gym_class_id = request.form['join_class']
+    print(gym_class_id)
+    gym_class = gym_class_repository.select(gym_class_id)
+    visit = Visit(member, gym_class)
+    visit_repository.save(visit)
+    return redirect(f"/members/{id}")

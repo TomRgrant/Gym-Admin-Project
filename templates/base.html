@@ -4,24 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/9170134017.css" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
 
     <header>
         <section>
-            <div>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/members">Members</a></li>
-                    <li><a href="/classes">Classes</a></li>
-                </ul>
-            </div>
+            <nav>
+                <div class="nav_links">
+                    <ul class="nav_ul">
+                        <li><a class="nav_link" href="/">Home</a></li>
+                        <li><a class="nav_link" href="/members">Members</a></li>
+                        <li><a class="nav_link" href="/classes">Classes</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav_logo">
+                    <img class="nav_logo_img" src="data:image/png;base64,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" alt="Gym Logo">
+                </div>
+            </nav>
         </section>
     </header>
 
-    {% block content %}
-        
-    {% endblock content %}
+    <main>
+
+        {% block content %}
+
+        {% endblock content %}
+
+    </main>
 </body>
 </html>
